@@ -1,8 +1,4 @@
-# First, thank you to let me try this coding test !
-
-It was very instructive and challenging.
-
-I hope you will enjoy it !
+# V2 : After delay - Sass et search ok 
 
 
 ### This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
