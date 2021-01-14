@@ -1,0 +1,301 @@
+@import "colors";
+
+.vh100 {
+    height: 100vh;
+}
+
+.battleField {
+    border: 2px solid $greyDark !important;
+    max-width: 600px;
+    min-width: 300px;
+    min-height: 500px;
+    max-height: 800px;
+    /* box-sizing: border-box;  */
+}
+
+.item-attack-spe:hover {
+    background-color: $greyBlue;
+}
+.item-attack-fast:hover {
+    background-color: $greyOrange;
+}
+
+  
+
+/* BOX COMPUTER */
+.box-computer {
+    height: 200px;
+}
+.box-computer-info{
+    width: 49%;
+    height: 70%;
+    margin: 5px;
+    background: $greyOrange;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to bottom, $white, $greyOrange);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to bottom, $white, $greyOrange); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+}
+.box-computer-pokemon{
+    width: 49%;
+    height: 85px;
+    margin: 5px;
+    align-items: flex-end;
+    height: 100%;
+    border: none !important;
+    
+}
+/* END BOX COMPUTER */
+
+/* BOX PLAYER */
+.box-player {
+    height: 200px;
+}
+.box-player-info{
+    width: 49%;
+    height: 70%;
+    margin: 5px;
+    align-items: flex-end;
+    background: $greyOrange;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to bottom, $white, $greyOrange);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to bottom, $white, $greyOrange); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+            
+}
+.box-player-pokemon{
+    width: 49%;
+    height: 85px;
+    margin: 5px;
+    align-items: flex-start;
+    height: 100%;
+    border: none !important;
+
+}
+/* END BOX PLAYER */
+
+.floor {
+    top:180px;
+    left: 20px;
+    width: 90%;
+    height: 15px;
+    background: $pokeShadow;
+    border-radius: 50%;
+    position: absolute;
+}
+
+.progressBar {
+    position: relative;
+    width: 100%; 
+}
+  
+
+
+/* BOX MSG ATTACK */
+.box-bottom {
+    /* height: 125px; */
+    display: flex;
+    justify-content: center;
+    margin: 5px 0 5px 0;
+    align-content :flex-end;
+    background: $greyOrange;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to bottom, $white, $greyOrange);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to bottom, $white, $greyOrange); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+}
+
+.lstAttacks {
+    width: 50%;
+}
+
+.msg-game {
+    font-size: 22px;
+    padding: 0 10px 0 10px;
+    height: 98px;
+}
+
+.restart{
+    height: 98px;
+    font-size: 24px;
+    display: flex;
+    justify-content: center;
+    align-content :center;
+    align-items: center;
+}
+
+/* ANIMATION FADE IN  */
+@keyframes fadeInUp {
+    from {transform: translate3d(0,60px,0)}
+    to {transform: translate3d(0,0,0);opacity: 1}
+}
+@-webkit-keyframes fadeInUp {
+    from {transform: translate3d(0,60px,0)}
+    to {transform: translate3d(0,0,0);opacity: 1}
+}
+
+@keyframes fadeInRight {
+    from {transform: translate3d(60px,0,0)}
+    to {transform: translate3d(0,0,0);opacity: 1}
+}
+@-webkit-keyframes fadeInRight {
+    from {transform: translate3d(60px,0,0)}
+    to {transform: translate3d(0,0,0);opacity: 1}
+}
+
+@keyframes fadeInLeft {
+    from {transform: translate3d(-60px,0,0)}
+    to {transform: translate3d(0,0,0);opacity: 1}
+}
+@-webkit-keyframes fadeInLeft {
+    from {transform: translate3d(-60px,0,0)}
+    to {transform: translate3d(0,0,0);opacity: 1}
+}
+
+.animated {
+    animation-duration: 0.3s;
+    animation-fill-mode: both;
+    -webkit-animation-duration: 0.3s;
+    -webkit-animation-fill-mode: both
+}
+.animatedFadeIn {
+    opacity: 0
+}
+.fadeInUp {
+    opacity: 0;
+    animation-name: fadeInUp;
+    -webkit-animation-name: fadeInUp;
+}
+.fadeInRight {
+    opacity: 0;
+    animation-name: fadeInRight;
+    -webkit-animation-name: fadeInRight;
+}
+.fadeInLeft {
+    opacity: 0;
+    animation-name: fadeInLeft;
+    -webkit-animation-name: fadeInLeft;
+}
+
+/* DAMAGE */
+.animated-shake {
+    animation: shake 0.4s cubic-bezier(.36,.07,.19,.97) both;
+    transform: translate3d(0, 0, 0);
+    backface-visibility: hidden;
+    perspective: 1000px;
+}
+
+@keyframes shake {
+    10%, 90% { transform: translate3d(-1px, 0, 0); }
+    20%, 80% { transform: translate3d(2px, 0, 0); }
+    30%, 50%, 70% { transform: translate3d(-4px, 0, 0); }
+    40%, 60% { transform: translate3d(4px, 0, 0); }
+}
+@-webkit-keyframes shake {
+    10%, 90% { transform: translate3d(-1px, 0, 0); }
+    20%, 80% { transform: translate3d(2px, 0, 0); }
+    30%, 50%, 70% { transform: translate3d(-4px, 0, 0); }
+    40%, 60% { transform: translate3d(4px, 0, 0); }
+}
+/* END DAMAGE */
+
+
+/* ATTACK */
+@-webkit-keyframes attack-launch {
+    16.65% {
+      -webkit-transform: translate(8px, -8px);
+      transform: translate(8px, -8px);
+    }
+    33.3% {
+      -webkit-transform: translate(-6px, 6px);
+      transform: translate(-6px, 6px);
+    }
+    49.95% {
+      -webkit-transform: translate(4px, -4px);
+      transform: translate(4px, -4px);
+    }
+    66.6% {
+      -webkit-transform: translate(-2px, 2px);
+      transform: translate(-2px, 2px);
+    }
+    83.25% {
+      -webkit-transform: translate(1px, -1px);
+      transform: translate(1px, -1px);
+    }
+    100% {
+      -webkit-transform: translate(0, 0);
+      transform: translate(0, 0);
+    }
+  }
+  @keyframes attack-launch {
+    16.65% {
+      -webkit-transform: translate(8px, -8px);
+      transform: translate(8px, -8px);
+    }
+    33.3% {
+      -webkit-transform: translate(-6px, 6px);
+      transform: translate(-6px, 6px);
+    }
+    49.95% {
+      -webkit-transform: translate(4px, -4px);
+      transform: translate(4px, -4px);
+    }
+    66.6% {
+      -webkit-transform: translate(-2px, 2px);
+      transform: translate(-2px, 2px);
+    }
+    83.25% {
+      -webkit-transform: translate(1px, -1px);
+      transform: translate(1px, -1px);
+    }
+    100% {
+      -webkit-transform: translate(0, 0);
+      transform: translate(0, 0);
+    }
+  }
+.attack {
+    display: inline-block;
+    vertical-align: middle;
+    -webkit-transform: perspective(1px) translateZ(0);
+    transform: perspective(1px) translateZ(0);
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+    -webkit-animation-name: attack-launch;
+    animation-name: attack-launch;
+    -webkit-animation-duration: 0.5s;
+    animation-duration: 0.5s;
+    -webkit-animation-timing-function: ease-in-out;
+    animation-timing-function: ease-in-out;
+    -webkit-animation-iteration-count: 1;
+    animation-iteration-count: 1;
+  }
+  /* END ATTACK */
+
+  /* LOOSE */
+.fadeOutRight {
+    opacity: 1;
+    animation-name: fadeOutRight;
+    -webkit-animation-name: fadeOutRight;
+}
+@keyframes fadeOutRight {
+    from {transform: translate3d(60px,0,0)}
+    to {transform: translate3d(0,0,0);opacity: 0}
+}
+@-webkit-keyframes fadeOutRight {
+    from {transform: translate3d(60px,0,0)}
+    to {transform: translate3d(0,0,0);opacity: 0}
+}
+
+.fadeOutLeft {
+    opacity: 1;
+    animation-name: fadeOutLeft;
+    -webkit-animation-name: fadeOutLeft;
+}
+@keyframes fadeOutLeft {
+    from {transform: translate3d(-60px,0,0)}
+    to {transform: translate3d(0,0,0);opacity: 0}
+}
+@-webkit-keyframes fadeOutLeft {
+    from {transform: translate3d(-60px,0,0)}
+    to {transform: translate3d(0,0,0);opacity: 1}
+}
+
+
+
+
+

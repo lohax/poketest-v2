@@ -1,0 +1,46 @@
+@import "colors";
+
+.fixpos {
+    position: fixed;
+    top:50;
+    z-index: 1000;
+}
+
+.inpSearch{
+    border: none;
+    border-bottom: 1px solid $greyDark;
+    height: 50px;
+    line-height: 50px;
+    padding-left: 20px;
+    color: $greyDarkStrong;
+    outline:none;
+}  
+
+.btn-search {
+    border-right: 1px solid $greyLight;
+    border-left: 1px solid $greyLight;
+}
+
+.animated {
+    animation-duration: 2s;
+    animation-fill-mode: both;
+    -webkit-animation-duration: 2s;
+    -webkit-animation-fill-mode: both
+}
+.animatedFadeOut {
+    opacity: 0;
+    display: none;
+}
+.animatedFadeIn {
+    opacity: 1;
+    display: flex;
+}
+
+.hide-poke {
+    display: none;
+}
+.show-poke {
+    display: flex;
+}
+
+
