@@ -1,6 +1,6 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "PokeGame",
+  "name": "Pokedex et jeu developpé lors d'un test sur 5 jours",
   "icons": [
     {
       "src": "favicon.ico",
