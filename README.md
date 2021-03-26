@@ -1,4 +1,5 @@
-# V2 : After delay - Sass et search ok 
+# Test Pokemon Dex and Game 
+# V2 : Sass et search ok 
 
 
 ### This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
