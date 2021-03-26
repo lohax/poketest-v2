@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useContext } from 'react'
+import React, { useState, useContext } from 'react'
 import { Link } from 'react-router-dom'
 import '../sass/App.scss'
 import logo from '../images/logo.png'
@@ -13,14 +13,6 @@ const Header = () => {
     isToggleOn: true,
     canLink: false
   })
-
-  useEffect(() => {
-    // console.info('allPokeFound', state.isToggleOn)
-  }, [state.isToggleOn])
-
-  useEffect(() => {
-    // console.info('allPokeFound', state.isToggleOn)
-  }, [state.canLink])
 
   function notify (typ) {
     toast.error(
@@ -49,8 +41,6 @@ const Header = () => {
 
   const btnFight = <button className='mr-2 btn btn-primary'>Fight</button>
   const btnBrowse = <button className='mr-2 btn btn-danger'>Quit</button>
-  // const lnkFight = <Link to='/Battle'>{btnFight}</Link>
-  // const lnkBrowse = <Link to='/'>{btnBrowse}</Link>
 
   return (
     <>
@@ -70,9 +60,6 @@ const Header = () => {
         </Link>
 
         <div onClick={handleClick}>
-          {/* {state.isToggleOn
-            ? state.canLink ? <Link to='/Battle'>{btnFight}</Link> : btnFight
-            : state.canLink ? <Link to='/'>{btnBrowse}</Link> : btnBrowse} */}
           {state.isToggleOn
             ? <Link to='/Battle'>{btnFight}</Link>
             : <Link to='/'>{btnBrowse}</Link>}

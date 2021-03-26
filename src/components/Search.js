@@ -6,27 +6,13 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faTimes, faSearch } from '@fortawesome/free-solid-svg-icons'
 
 const Search = ({ data, allPokeFound, handleSearch }) => {
-  // console.log('data', data)
-  // console.log('allPokeFound', allPokeFound)
-  // console.log('handleSearch', handleSearch)
-
   const [searchFilter, setSearchFilter] = useState('')
   const [dataPoke, setDataPoke] = useState(data)
 
   useEffect(() => {
-    // console.log('dataPoke', dataPoke)
-  }, [dataPoke])
-
-  useEffect(() => {
-    // console.log(data)
-    // console.log([data][0].pokemons)
     setDataPoke(dataPoke => [data][0].pokemons)
-    // console.log('dataPoke init', dataPoke)
   }, [])
 
-  // function handleSearch (event) {
-  //   data.onChange(result)
-  // }
   const handleKeyUp = event => {
     if (event.key === 'Enter') {
       search(event)
@@ -36,7 +22,6 @@ const Search = ({ data, allPokeFound, handleSearch }) => {
   const search = (e) => {
     const options = {
       minMatchCharLength: 3,
-      // distance: 0,
       keys: [
         'name',
         'classification',
@@ -44,11 +29,8 @@ const Search = ({ data, allPokeFound, handleSearch }) => {
       ]
     }
     const fuse = new Fuse(dataPoke, options)
-
     // Resultat de recherche
     const result = fuse.search(searchFilter)
-    // console.log('search result', result)
-
     handleSearch(result, searchFilter)
   }
 
@@ -68,7 +50,6 @@ const Search = ({ data, allPokeFound, handleSearch }) => {
         value={searchFilter}
         onChange={e => setSearchFilter(e.target.value)}
         onKeyUp={e => handleKeyUp(e)}
-        // onKeyPress={e => search(e.target.value)}
       />
       <div className='input-group-append'>
         <button

@@ -13,8 +13,6 @@ import 'react-toastify/dist/ReactToastify.css'
 
 import Pane from './Pane'
 import Search from './Search'
-// import Test from './Test'
-// import Browse from './Browse'
 
 import 'bootstrap/dist/css/bootstrap.min.css'
 import '../sass/App.scss'
@@ -106,7 +104,7 @@ function Browse () {
               handleDblClick={handleDblClick}
             />
 
-          </SlidingPane>
+            </SlidingPane>
 
           : ''}
       </div>

@@ -4,7 +4,6 @@ import Popover from 'react-bootstrap/Popover'
 import Image from 'react-bootstrap/Image'
 
 import Pokeball from '../images/pokeball_icon.png'
-// import PokeballDisable from '../images/pokeball_icon_disable.png'
 
 const PlayerStandByPoke = (pokePlayer, multiSelectedPoke) => {
   const { name, image } = pokePlayer.pokePlayer
@@ -46,6 +45,7 @@ const PlayerStandByPoke = (pokePlayer, multiSelectedPoke) => {
         </OverlayTrigger>
 
         {pokePlayer.multiSelectedPoke.map((pokemon, index) => (
+
           <OverlayTrigger
             trigger={['hover', 'focus']}
             key={`${pokemon.name}-${pokemon.index}`}
@@ -81,17 +81,6 @@ const PlayerStandByPoke = (pokePlayer, multiSelectedPoke) => {
           </OverlayTrigger>
 
         ))}
-
-        {/* <Image
-              id={name}
-              className='align-top ml-1'
-              style={{ width: '22px' }}
-              src={PokeballDisable}
-              alt={name}
-              fluid
-            /> */}
-
-        {/* ENDLST POKEBALL */}
 
       </div>
     </>

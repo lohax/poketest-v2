@@ -4,7 +4,6 @@ import Popover from 'react-bootstrap/Popover'
 import Image from 'react-bootstrap/Image'
 
 import Pokeball from '../images/pokeball_icon.png'
-// import PokeballDisable from '../images/pokeball_icon_disable.png'
 
 const ComputerStandByPoke = (pokeComputer, computerSelectedPoke) => {
   const { name, image } = pokeComputer.pokeComputer
@@ -12,6 +11,7 @@ const ComputerStandByPoke = (pokeComputer, computerSelectedPoke) => {
     <>
       {/* LST POKEBALL */}
       <div className='d-flex justify-content-start align-items-center '>
+
         <OverlayTrigger
           trigger={['hover', 'focus']}
           key={name}
@@ -81,17 +81,6 @@ const ComputerStandByPoke = (pokeComputer, computerSelectedPoke) => {
           </OverlayTrigger>
 
         ))}
-
-        {/* <Image
-              id={name}
-              className='align-top ml-1'
-              style={{ width: '22px' }}
-              src={PokeballDisable}
-              alt={name}
-              fluid
-            /> */}
-
-        {/* ENDLST POKEBALL */}
 
       </div>
     </>

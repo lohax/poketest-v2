@@ -2,10 +2,10 @@ import { gql } from '@apollo/client'
 
 export const GET_POKEMON_INFO = gql`
   query pokemons(
-    $first: Int! #, $name: String!
+    $first: Int!
     ) {
     pokemons(
-      first: $first #, name: $name
+      first: $first 
       ) {
       id
       number

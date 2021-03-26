@@ -44,7 +44,6 @@ const Battle = () => {
   // Set Pokemon for player
   useEffect(() => {
     const pickPokePlayer = multiSelectedPoke.shift()
-    // setPrevPlayerTeam([...prevPlayerTeam, pickPokePlayer])
     setPokePlayer(...pokePlayer, pickPokePlayer)
   }, [])
 
@@ -55,24 +54,12 @@ const Battle = () => {
   // Set Pokemon for computer
   useEffect(() => {
     const pickPokeComputer = computerSelectedPoke.shift()
-    // setPrevComputerTeam([...prevComputerTeam, pickPokeComputer])
     setPokeComputer(pokeComputer => pickPokeComputer)
   }, [])
 
   useEffect(() => {
     setPokeComputerHpNow(pokeComputerHpNow => pokeComputer.maxHP)
   }, [pokeComputer.maxHP])
-
-  useEffect(() => {
-    // console.log('useEffect', pokeComputerHpNow)
-  }, [pokeComputerHpNow])
-
-  useEffect(() => {
-    // console.log('useEffect', pokeComputerHpNow)
-  }, [pokePlayerHpNow])
-
-  // useEffect(() => {
-  // }, [pokeComputer])
 
   // Start management
   useEffect(() => {
@@ -82,22 +69,9 @@ const Battle = () => {
 
     // ready for battle
     if (isStart && typeof pokeComputer.name !== 'undefined') {
-      // console.info(prevPlayerTeam)
-      // console.info(prevComputerTeam)
       start()
     }
   }, [pokeComputer])
-
-  useEffect(() => {
-    // setShowFading(showFading => false)
-  }, [setMsgGame])
-
-  // useEffect(() => {
-  //   setPrevPlayerTeam(multiSelectedPoke)
-  // }, [])
-  // useEffect(() => {
-  //   setPrevComputerTeam(computerSelectedPoke)
-  // }, [])
 
   const start = () => {
     setIsStart(false)
@@ -126,6 +100,7 @@ const Battle = () => {
 
     // TODO Random esquive 1/5
     // TODO Extract damage calcul
+    // TODO Make HOC for handlePlayerAttack and handleComputerAttack
 
     // set initial damage
     damage = (damage * 2) + Math.floor(Math.random() * 50)
@@ -138,9 +113,6 @@ const Battle = () => {
 
     nowHpComputer = ((pokeComputerHpNow - damage) < 0 ? 0 : (pokeComputerHpNow - damage))
 
-    // setPokeComputer(pokeComputer => {
-    //   return { ...pokeComputer, maxHP: nowHP }
-    // })
     setPokeComputerHpNow(pokeComputerHpNow => nowHpComputer)
 
     setMsgGame(msgGame => `${pokePlayer.name} used ${name} <br> and make ${damage} damage !`)

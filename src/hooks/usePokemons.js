@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import { useQuery } from '@apollo/client'
 import { GET_POKEMON_INFO } from '../graphql/getPokemons'
 
@@ -6,40 +6,11 @@ import { toast } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
 
 const usePokemons = () => {
-  // const [searchFilter, setFearchFilter] = useState('')
   const myFirst = 151
-  // const myPokeFilter = "Bulbasaur"
 
   const { data, loading, error } = useQuery(GET_POKEMON_INFO, {
     variables: { first: myFirst }
-    // variables: { name: searchFilter }
   })
-
-  console.log(typeof data)
-
-  // const [executeSearch, { data, loading, error, refetch }] = useLazyQuery(GET_POKEMON_INFO)
-
-  // useEffect(() => {
-  //   if (myFirst) {
-  //     executeSearch({
-  //       variables: { first: myFirst }
-  //     })
-  //   }
-  // }, [myFirst, executeSearch])
-
-  // useEffect(() => {
-  //   executeSearch({
-  //     // variables: { first: myFirst }
-  //     variables: { first: myFirst, name: 'Bulbasaur' }
-  //   })
-  // }, [])
-
-  // useEffect(() => {
-  //   executeSearch({
-  //     // variables: { first: myFirst }
-  //     variables: { name: `%${searchFilter}%` }
-  //   })
-  // }, [searchFilter])
 
   const [allPokeFound, setallPokeFound] = useState([])
 
@@ -50,22 +21,6 @@ const usePokemons = () => {
   const [selectedPoke, setSelectedPoke] = useState([])
   const [multiSelectedPoke, setMultiSelectedPoke] = useState([])
   const [computerSelectedPoke, setComputerSelectedPoke] = useState([])
-
-  useEffect(() => {
-    console.info('allPokeFound', allPokeFound)
-  }, [allPokeFound])
-
-  useEffect(() => {
-    // console.log('selectedPoke', selectedPoke)
-  }, [selectedPoke])
-
-  useEffect(() => {
-    // console.log('multiSelectedPoke', multiSelectedPoke)
-  }, [multiSelectedPoke])
-
-  useEffect(() => {
-    // console.log('computerSelectedPoke ', computerSelectedPoke)
-  }, [computerSelectedPoke])
 
   function notify (typ) {
     toast.error(
@@ -119,11 +74,6 @@ const usePokemons = () => {
   }
 
   const handleSearch = (filtered, searchFilter) => {
-    // console.log('searchFilter', searchFilter)
-    // executeSearch({
-    //   variables: { name: searchFilter }
-    // })
-    // setFearchFilter(searchFilter)
     setallPokeFound(allPokeFound => [])
     filtered.map((key, index) => (
       setallPokeFound(allPokeFound => [...allPokeFound, key.item])
